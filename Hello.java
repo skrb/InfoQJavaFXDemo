@@ -8,18 +8,18 @@ import javafx.stage.Stage;
 public class Hello extends Application {
     @Override
     public void start(Stage stage) {
-        // ƒRƒ“ƒeƒi
+        // ã‚³ãƒ³ãƒ†ãƒŠ
         Group container = new Group();
 
-        // ƒV[ƒ“ƒOƒ‰ƒt‚Ìƒ‹[ƒg—v‘f‚ğ¶¬‚µAƒRƒ“ƒeƒi‚ğ“\‚é
+        // ã‚·ãƒ¼ãƒ³ã‚°ãƒ©ãƒ•ã®ãƒ«ãƒ¼ãƒˆè¦ç´ ã‚’ç”Ÿæˆã—ã€ã‚³ãƒ³ãƒ†ãƒŠã‚’è²¼ã‚‹
         Scene scene = new Scene(container, 100, 20);
         stage.setScene(scene);
 
-        // ƒ‰ƒxƒ‹‚ğ¶¬‚µƒRƒ“ƒeƒi‚É“\‚é
+        // ãƒ©ãƒ™ãƒ«ã‚’ç”Ÿæˆã—ã‚³ãƒ³ãƒ†ãƒŠã«è²¼ã‚‹
         Label label = new Label("Hello, World!");
         container.getChildren().add(label);
 
-        // •\¦
+        // è¡¨ç¤º
         stage.setVisible(true);
     }
 

@@ -2,25 +2,26 @@ import java.util.*;
 
 import javafx.application.Application;
 import javafx.application.Launcher;
-import javafx.collections.*;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.chart.*;
-import javafx.scene.chart.part.*;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.part.CategoryAxis;
+import javafx.scene.chart.part.NumberAxis;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.*;
+import javafx.scene.control.ListView;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextBox;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Slider;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.text.Font;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
@@ -39,23 +40,23 @@ public class UIControlsDemo extends Application {
         HBox hbox = new HBox(10);
         hbox.setAlignment(Pos.BASELINE_CENTER);
         
-        // ÉâÉxÉã
+        // „É©„Éô„É´
         Label label = new Label("Label");
         hbox.getChildren().add(label);
 
-        // É`ÉFÉbÉNÉ{ÉbÉNÉX
+        // „ÉÅ„Çß„ÉÉ„ÇØ„Éú„ÉÉ„ÇØ„Çπ
         CheckBox checkBox = new CheckBox("CheckBox");
         hbox.getChildren().add(checkBox);
 
-        // ÉâÉWÉIÉ{É^Éì
+        // „É©„Ç∏„Ç™„Éú„Çø„É≥
         RadioButton radioButton = new RadioButton("RadioButton");
         hbox.getChildren().add(radioButton);
         
-        // ÉeÉLÉXÉgÉ{ÉbÉNÉX
+        // „ÉÜ„Ç≠„Çπ„Éà„Éú„ÉÉ„ÇØ„Çπ
         TextBox textBox = new TextBox("TextBox");
         hbox.getChildren().add(textBox);
         
-        // É{É^Éì
+        // „Éú„Çø„É≥
         Button button = new Button("Button");
         hbox.getChildren().add(button);
         
@@ -64,7 +65,7 @@ public class UIControlsDemo extends Application {
         hbox = new HBox(10);
         hbox.setAlignment(Pos.BASELINE_CENTER);
 
-        // ÉäÉXÉg
+        // „É™„Çπ„Éà
         ListView<String> listView = new ListView<>();
         ObservableList<String> list
             = FXCollections.observableArrayList("ListView 1", 
@@ -74,7 +75,7 @@ public class UIControlsDemo extends Application {
         listView.setPrefHeight(80);
         hbox.getChildren().add(listView);
 
-        // ÉRÉìÉ{É{ÉbÉNÉX
+        // „Ç≥„É≥„Éú„Éú„ÉÉ„ÇØ„Çπ
         ChoiceBox<String> choiceBox = new ChoiceBox<>();
         list = FXCollections.observableArrayList("ChoiceBox 1", 
                                                  "ChoiceBox 2", 
@@ -87,13 +88,13 @@ public class UIControlsDemo extends Application {
         hbox = new HBox(10);
         hbox.setAlignment(Pos.BASELINE_CENTER);
         
-        // ÉvÉçÉOÉåÉXÉoÅ[
+        // „Éó„É≠„Ç∞„É¨„Çπ„Éê„Éº
         label = new Label("ProgressBar");
         hbox.getChildren().add(label);
         ProgressBar progressBar = new ProgressBar(0.8);
         hbox.getChildren().add(progressBar);
 
-        // ÉXÉâÉCÉ_Å[
+        // „Çπ„É©„Ç§„ÉÄ„Éº
         label = new Label("Slider");
         hbox.getChildren().add(label);
         Slider slider = new Slider(0, 1, 0.5);
@@ -101,7 +102,7 @@ public class UIControlsDemo extends Application {
 
         vbox.getChildren().add(hbox);
 
-        // ÉoÅ[ÉOÉâÉt
+        // „Éê„Éº„Ç∞„É©„Éï
         String[] items = {"item1", "item2", "item3"};
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setCategories(FXCollections.<String>observableArrayList(items));
@@ -127,7 +128,6 @@ public class UIControlsDemo extends Application {
         BarChart<String, Number> chart 
             = new BarChart<String, Number>(xAxis, yAxis, barChartData);
         chart.setPrefSize(400, 300);
-        //        chart.setTranslateY(-200);
         
         vbox.getChildren().add(chart);
 

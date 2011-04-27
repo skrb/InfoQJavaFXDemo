@@ -31,18 +31,18 @@ public class WebViewDemo extends Application {
         Scene scene = new Scene(borderPane);
         stage.setScene(scene);
 
-        // ƒuƒ‰ƒEƒU
+        // ãƒ–ãƒ©ã‚¦ã‚¶
         engine = new WebEngine();
         WebView view = new WebView(engine);
         view.setPrefSize(600,500);
         borderPane.setCenter(view);
         
-        // ”½ËŒø‰Ê‚ğ‰Á‚¦‚é
+        // åå°„åŠ¹æœã‚’åŠ ãˆã‚‹
         Reflection reflection = new Reflection();
         reflection.setFraction(0.5);
         view.setEffect(reflection);
 
-        // ƒy[ƒW‚Ìƒ[ƒh‚ªI—¹‚µ‚½‚Ìˆ—
+        // ãƒšãƒ¼ã‚¸ã®ãƒ­ãƒ¼ãƒ‰ãŒçµ‚äº†ã—ãŸæ™‚ã®å‡¦ç†
         Task<Void> task = engine.getLoadTask();
         task.setOnDone(new EventHandler<TaskEvent>() {
             public void handle(TaskEvent event) {
@@ -51,13 +51,13 @@ public class WebViewDemo extends Application {
             }
         });
 
-        // …•½ƒ{ƒbƒNƒX
+        // æ°´å¹³ãƒœãƒƒã‚¯ã‚¹
         HBox hbox = new HBox(10);
         hbox.setPrefHeight(40);
         hbox.setAlignment(Pos.BASELINE_CENTER);
         borderPane.setTop(hbox);
 
-        // ƒeƒLƒXƒg“ü—Í
+        // ãƒ†ã‚­ã‚¹ãƒˆå…¥åŠ›
         urlBox = new TextBox(40);
         urlBox.setFont(new Font("sanserif", 16));
         hbox.getChildren().add(urlBox);
@@ -68,7 +68,7 @@ public class WebViewDemo extends Application {
             }
         });
 
-        // ƒ{ƒ^ƒ“
+        // ãƒœã‚¿ãƒ³
         Button button = new Button("Open");
         button.setFont(new Font("sanserif", 16));
         hbox.getChildren().add(button);
@@ -82,7 +82,7 @@ public class WebViewDemo extends Application {
         stage.setVisible(true);
     }
 
-    // ƒy[ƒW‚Ìƒ[ƒh
+    // ãƒšãƒ¼ã‚¸ã®ãƒ­ãƒ¼ãƒ‰
     private void loadUrl() {
         String url = urlBox.getText();
         if (url != null && !url.trim().isEmpty()) {

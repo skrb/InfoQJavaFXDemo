@@ -29,36 +29,36 @@ public class SceneGraphDemo extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
 
-        // ‰~
+        // å††
         Circle circle = new Circle(200.0, 200.0, 300.0, Color.PINK);
         root.getChildren().add(circle);
 
-        // ƒ{[ƒ_[ƒŒƒCƒAƒEƒg
+        // ãƒœãƒ¼ãƒ€ãƒ¼ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆ
         BorderPane borderPane = new BorderPane();
         root.getChildren().add(borderPane);
 
-        // ƒuƒ‰ƒEƒU
+        // ãƒ–ãƒ©ã‚¦ã‚¶
         WebEngine engine = new WebEngine();
         WebView view = new WebView(engine);
         borderPane.setCenter(view);
 
-        // …•½ƒ{ƒbƒNƒX
+        // æ°´å¹³ãƒœãƒƒã‚¯ã‚¹
         HBox hbox = new HBox(10);
         borderPane.setTop(hbox);
 
-        // ƒ‰ƒxƒ‹
+        // ãƒ©ãƒ™ãƒ«
         Label label = new Label("URL:");
         hbox.getChildren().add(label);
 
-        // ƒeƒLƒXƒg“ü—Í
+        // ãƒ†ã‚­ã‚¹ãƒˆå…¥åŠ›
         TextBox textBox = new TextBox(40);
         hbox.getChildren().add(textBox);
 
-        // ƒ{ƒ^ƒ“
+        // ãƒœã‚¿ãƒ³
         Button button = new Button("Open");
         hbox.getChildren().add(button);
 
-        // ƒvƒƒpƒeƒB‚Ìİ’è
+        // ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã®è¨­å®š
 
         stage.setTitle("SceneGraph Demo");
 
@@ -87,7 +87,7 @@ public class SceneGraphDemo extends Application {
             }
         });
 
-        // •\¦
+        // è¡¨ç¤º
         stage.setVisible(true);
     }
 
