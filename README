@@ -1,0 +1,9 @@
+InfoQ JavaFX 2.0のサンプルコード
+
+Compile
+
+> javac -cp jfxrt.jar;. Hello.java
+
+Execute
+
+> java -cp jfxrt.jar;. Hello
