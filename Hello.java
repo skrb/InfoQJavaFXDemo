@@ -5,6 +5,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+/**
+ * JavaFXでHello, World!
+ */
 public class Hello extends Application {
     @Override
     public void start(Stage stage) {

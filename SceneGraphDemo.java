@@ -18,6 +18,11 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+/**
+ * シーングラフのデモ
+ *
+ * 複数の描画要素からシーングラフを構成する
+ */
 public class SceneGraphDemo extends Application {
     private WebEngine webEngine;
     private TextBox urlBox;

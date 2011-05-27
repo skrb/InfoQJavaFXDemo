@@ -17,6 +17,11 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+/**
+ * ブラウザのデモ
+ *
+ * カスタムWebブラウザを実現する
+ */
 public class WebViewDemo extends Application {
     private WebEngine engine;
     private TextBox urlBox;

@@ -1,5 +1,3 @@
-import java.util.*;
-
 import javafx.application.Application;
 import javafx.application.Launcher;
 import javafx.collections.FXCollections;
