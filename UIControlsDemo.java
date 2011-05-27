@@ -1,12 +1,11 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.part.CategoryAxis;
-import javafx.scene.chart.part.NumberAxis;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -105,6 +104,7 @@ public class UIControlsDemo extends Application {
         CategoryAxis xAxis = new CategoryAxis();
         xAxis.setCategories(FXCollections.<String>observableArrayList(items));
         NumberAxis yAxis = new NumberAxis(0.0, 200.0, 50.0);
+        @SuppressWarnings("unchecked")
         ObservableList<BarChart.Series<String, Number>> barChartData
             = FXCollections.observableArrayList(
             new BarChart.Series<String, Number>(FXCollections.observableArrayList(
@@ -133,6 +133,6 @@ public class UIControlsDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(UIControlsDemo.class, null);
+        Application.launch(UIControlsDemo.class, null);
     }
 }

@@ -1,6 +1,5 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
-import javafx.binding.ObjectBinding;
+import javafx.beans.binding.ObjectBinding;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -89,6 +88,6 @@ public class LowLevelBindDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(LowLevelBindDemo.class, null);
+        Application.launch(LowLevelBindDemo.class, null);
     }
 }

@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Slider;
@@ -49,6 +48,6 @@ public class MediaPlayerDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(MediaPlayerDemo.class, null);
+        Application.launch(MediaPlayerDemo.class, null);
     }
 }

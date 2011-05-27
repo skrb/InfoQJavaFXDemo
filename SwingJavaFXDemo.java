@@ -10,7 +10,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.embed.swing.JFXPanel;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -86,6 +85,6 @@ public class SwingJavaFXDemo extends Application {
 
     public static void main(String[] args) {
         // JavaFXのスレッドを起動
-        Launcher.launch(SwingJavaFXDemo.class, null);
+        Application.launch(SwingJavaFXDemo.class, null);
     }
 }

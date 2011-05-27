@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.async.Task;
 import javafx.async.TaskEvent;
 import javafx.event.EventHandler;
@@ -53,6 +52,6 @@ public class AsyncDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(AsyncDemo.class, null);
+        Application.launch(AsyncDemo.class, null);
     }
 }

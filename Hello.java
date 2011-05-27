@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -27,6 +26,6 @@ public class Hello extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(Hello.class, null);
+        Application.launch(Hello.class, null);
     }
 }

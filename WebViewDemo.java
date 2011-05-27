@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.async.Task;
 import javafx.async.TaskEvent;
 import javafx.event.ActionEvent;
@@ -51,7 +50,7 @@ public class WebViewDemo extends Application {
         Task<Void> task = engine.getLoadTask();
         task.setOnDone(new EventHandler<TaskEvent>() {
             public void handle(TaskEvent event) {
-                String url = engine.getUrl();
+                String url = engine.getLocation();
                 urlBox.setText(url);
             }
         });
@@ -96,6 +95,6 @@ public class WebViewDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(WebViewDemo.class, null);
+        Application.launch(WebViewDemo.class, null);
     }
 }

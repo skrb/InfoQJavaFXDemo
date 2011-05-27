@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Slider;
@@ -37,6 +36,6 @@ public class BindDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(BindDemo.class, null);
+        Application.launch(BindDemo.class, null);
     }
 }

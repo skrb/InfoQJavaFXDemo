@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -38,6 +37,6 @@ public class CSSDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(CSSDemo.class, null);
+        Application.launch(CSSDemo.class, null);
     }
 }

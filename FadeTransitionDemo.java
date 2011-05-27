@@ -1,8 +1,7 @@
 import java.util.Random;
 
-import javafx.animation.transition.FadeTransition;
+import javafx.animation.FadeTransition;
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -54,6 +53,6 @@ public class FadeTransitionDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(FadeTransitionDemo.class, null);
+        Application.launch(FadeTransitionDemo.class, null);
     }
 }

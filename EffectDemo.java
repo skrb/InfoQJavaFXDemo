@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.geometry.HPos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -9,10 +8,10 @@ import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
+import javafx.scene.effect.Light;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Reflection;
 import javafx.scene.effect.SepiaTone;
-import javafx.scene.effect.light.DistantLight;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -102,7 +101,7 @@ public class EffectDemo extends Application {
         // Lighting ライトのエフェクト ここではDistantLightを使用
         image = new ImageView(new Image("macarons.jpg"));
         Lighting lighting = new Lighting();
-        DistantLight light = new DistantLight();
+        Light.Distant light = new Light.Distant();
         light.setAzimuth(-135.0f);
         lighting.setLight(light);
         lighting.setSurfaceScale(5.0f);
@@ -135,6 +134,6 @@ public class EffectDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(EffectDemo.class, null);
+        Application.launch(EffectDemo.class, null);
     }
 }

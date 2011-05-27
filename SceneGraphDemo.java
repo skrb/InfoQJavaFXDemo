@@ -1,5 +1,4 @@
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -97,6 +96,6 @@ public class SceneGraphDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(SceneGraphDemo.class, null);
+        Application.launch(SceneGraphDemo.class, null);
     }
 }

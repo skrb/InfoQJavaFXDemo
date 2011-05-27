@@ -2,7 +2,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.application.Launcher;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -36,9 +35,9 @@ public class SimpleAnimationDemo extends Application {
         timeline = new Timeline();
         timeline.getKeyFrames().addAll(
             new KeyFrame(Duration.ZERO,
-                         KeyValue.keyValue(rect.translateXProperty(), 0)),
+                         new KeyValue<>(rect.translateXProperty(), 0.0)),
             new KeyFrame(new Duration(1000),
-                         KeyValue.keyValue(rect.translateXProperty(), 320)));
+                         new KeyValue<>(rect.translateXProperty(), 320.0)));
 
         Button button = new Button("Start");
         button.setLayoutX(180);
@@ -56,6 +55,6 @@ public class SimpleAnimationDemo extends Application {
     }
 
     public static void main(String[] args) {
-        Launcher.launch(SimpleAnimationDemo.class, null);
+        Application.launch(SimpleAnimationDemo.class, null);
     }
 }
