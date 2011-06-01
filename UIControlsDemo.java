@@ -63,7 +63,7 @@ public class UIControlsDemo extends Application {
         hbox.setAlignment(Pos.BASELINE_CENTER);
 
         // リスト
-        ListView<String> listView = new ListView<>();
+        ListView<String> listView = new ListView<String>();
         ObservableList<String> list
             = FXCollections.observableArrayList("ListView 1", 
                                                 "ListView 2", 
@@ -73,7 +73,7 @@ public class UIControlsDemo extends Application {
         hbox.getChildren().add(listView);
 
         // コンボボックス
-        ChoiceBox<String> choiceBox = new ChoiceBox<>();
+        ChoiceBox<String> choiceBox = new ChoiceBox<String>();
         list = FXCollections.observableArrayList("ChoiceBox 1", 
                                                  "ChoiceBox 2", 
                                                  "ChoiceBox 3");

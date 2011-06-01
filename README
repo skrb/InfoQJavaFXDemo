@@ -2,11 +2,11 @@ InfoQ JavaFX 2.0のサンプルコード
 
 Compile
 
-> javac -cp jfxrt.jar;. Hello.java
+> javac -encoding UTF-8 -cp rt\lib\jfxrt.jar;. Hello.java
 
 Execute
 
-> java -cp jfxrt.jar;. Hello
+> java -cp rt\lib\jfxrt.jar;. Hello
 
 
 Description
