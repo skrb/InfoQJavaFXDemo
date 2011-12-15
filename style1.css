@@ -1,5 +1,5 @@
 .button {
-    -fx-font: 14pt "SansSerif";
+    -fx-font: 14pt "sans-serif";
     -fx-text-fill: #00FF33;
     -fx-background-color: #0066FF;
     -fx-border-radius: 0;
@@ -8,7 +8,7 @@
 }
 
 #button3 {
-    -fx-font: 14pt "Monospaced";
+    -fx-font: 14pt "monospaced";
     -fx-text-fill: #FFCC00;
     -fx-background-color: #003366;
     -fx-border-radius: 0;

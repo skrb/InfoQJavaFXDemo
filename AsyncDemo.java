@@ -4,7 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-import javafx.concurrent.Worker;
+import javafx.concurrent.Worker.State;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -47,11 +47,11 @@ public class AsyncDemo extends Application {
             }
         };
 
-        service.stateProperty().addListener(new ChangeListener<Worker.State>() {
-
-            public void changed(ObservableValue<? extends Worker.State> state,
-                                 Worker.State oldValue, Worker.State newValue) {
-                if (newValue == Worker.State.SUCCEEDED) {
+        service.stateProperty().addListener(new ChangeListener<State>() {
+            @Override
+            public void changed(ObservableValue<? extends State> state,
+                                 State oldValue, State newValue) {
+                if (newValue == State.SUCCEEDED) {
                     Image image = service.getValue();
                     view.setImage(image);
                 }
@@ -60,7 +60,6 @@ public class AsyncDemo extends Application {
 
         // バックグラウンド処理の開始
         service.start();
-
 
         stage.setScene(scene);
         stage.show();

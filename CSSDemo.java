@@ -20,7 +20,8 @@ public class CSSDemo extends Application {
 
         Scene scene = new Scene(container, 400, 100);
         // スタイルシートの設定
-        scene.getStylesheets().add("/style.css");
+        scene.getStylesheets().add("style.css");
+//        scene.getStylesheets().add("style1.css");
 
         Button button1 = new Button("Button1");
         Button button2 = new Button("Button2");

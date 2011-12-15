@@ -45,6 +45,7 @@ public class SimpleAnimationDemo extends Application {
         container.getChildren().add(button);
 
         button.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
             public void handle(ActionEvent event) {
                 timeline.playFromStart();
             }

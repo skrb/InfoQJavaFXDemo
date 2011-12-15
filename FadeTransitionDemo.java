@@ -1,6 +1,7 @@
 import java.util.Random;
 
 import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -42,6 +43,7 @@ public class FadeTransitionDemo extends Application {
                                      circle);
             transition.setAutoReverse(true);
             transition.setCycleCount(FadeTransition.INDEFINITE);
+            transition.setInterpolator(Interpolator.EASE_BOTH);
             transition.setFromValue(1.0);
             transition.setToValue(0.0);
             transition.play();

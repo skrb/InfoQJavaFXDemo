@@ -60,6 +60,7 @@ public class SwingJavaFXDemo extends Application {
         try {
             // Swingのスレッドで処理する
             SwingUtilities.invokeAndWait(new Runnable() {
+                @Override
                 public void run() {
                     initSwing();
                 }

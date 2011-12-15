@@ -14,6 +14,9 @@ import javafx.stage.Stage;
  * 3つのスライダと四角の色をバインドする
  */
 public class LowLevelBindDemo extends Application {
+    // バインデイング
+    private ObjectBinding<Color> binding;
+    
     @Override
     public void start(Stage stage) {
         stage.setTitle("LowLevelBind Demo");
@@ -61,7 +64,7 @@ public class LowLevelBindDemo extends Application {
         blue.setLayoutY(160);
         container.getChildren().add(blue);
 
-        ObjectBinding<Color> binding = new ObjectBinding<Color>() {
+        binding = new ObjectBinding<Color>() {
             {
                 // スライダの値とバインドする
                 super.bind(red.valueProperty());

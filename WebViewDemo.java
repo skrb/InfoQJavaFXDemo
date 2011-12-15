@@ -86,7 +86,7 @@ public class WebViewDemo extends Application {
 
         // ボタン
         Button button = new Button("Open");
-        button.setFont(new Font("sanserif", 16));
+        button.setStyle("-fx-font-family: 'sans-serif'; -fx-font-size: 16;");
         hbox.getChildren().add(button);
         button.setOnAction(handler);
 
