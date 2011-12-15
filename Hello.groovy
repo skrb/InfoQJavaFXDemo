@@ -16,13 +16,13 @@ class Hello extends Application {
                     text: "Hello, World!",
                     font: new Font(20),
                 )
-            ), 100, 30);
+            ), 100, 30)
 
-        stage.scene = scene;
-        stage.visible = true;
+        stage.scene = scene
+        stage.show
     }
 
     static main(args) {
-        Application.launch(Hello.class, null);
+        Application.launch(null)
     }
 }
