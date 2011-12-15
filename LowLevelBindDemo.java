@@ -84,10 +84,10 @@ public class LowLevelBindDemo extends Application {
         rect.fillProperty().bind(binding);
 
         stage.setScene(scene);
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(LowLevelBindDemo.class, null);
+        Application.launch(null);
     }
 }

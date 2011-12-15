@@ -15,7 +15,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -32,7 +32,7 @@ public class SwingJavaFXDemo extends Application {
     public void initSwing() {
         JFrame frame = new JFrame("Swing-JavaFX Demo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 120);
+        frame.setSize(400, 120);
         frame.setLayout(new GridLayout(2, 0));
 
         JPanel panel = new JPanel();
@@ -75,9 +75,9 @@ public class SwingJavaFXDemo extends Application {
         Scene scene = new Scene(container);
 
         Label label = new Label("JavaFX: Label");
-        TextBox textBox = new TextBox("Text Box");
+        TextField textField = new TextField("Text Box");
         Button button = new Button("Button");
-        container.getChildren().addAll(label, textBox, button);
+        container.getChildren().addAll(label, textField, button);
 
         // Swingにシーングラフを貼る
         jfxPanel.setScene(scene);
@@ -85,6 +85,6 @@ public class SwingJavaFXDemo extends Application {
 
     public static void main(String[] args) {
         // JavaFXのスレッドを起動
-        Application.launch(SwingJavaFXDemo.class, null);
+        Application.launch(null);
     }
 }

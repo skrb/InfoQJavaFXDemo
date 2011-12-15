@@ -130,10 +130,10 @@ public class EffectDemo extends Application {
         container.add(caption, 2, 5);
 
         stage.setScene(scene);
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(EffectDemo.class, null);
+        Application.launch(null);
     }
 }

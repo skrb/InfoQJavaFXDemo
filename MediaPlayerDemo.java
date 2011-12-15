@@ -43,11 +43,11 @@ public class MediaPlayerDemo extends Application {
 
         movieView.rotateProperty().bind(slider.valueProperty());
 
-        stage.setVisible(true);
+        stage.show();
 
     }
 
     public static void main(String[] args) {
-        Application.launch(MediaPlayerDemo.class, null);
+        Application.launch(null);
     }
 }

@@ -35,9 +35,9 @@ public class SimpleAnimationDemo extends Application {
         timeline = new Timeline();
         timeline.getKeyFrames().addAll(
             new KeyFrame(Duration.ZERO,
-                         new KeyValue<Number>(rect.translateXProperty(), 0.0)),
+                         new KeyValue(rect.translateXProperty(), 0.0)),
             new KeyFrame(new Duration(1000),
-                         new KeyValue<Number>(rect.translateXProperty(), 320.0)));
+                         new KeyValue(rect.translateXProperty(), 320.0)));
 
         Button button = new Button("Start");
         button.setLayoutX(180);
@@ -51,10 +51,10 @@ public class SimpleAnimationDemo extends Application {
         });
 
         stage.setScene(scene);
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(SimpleAnimationDemo.class, null);
+        Application.launch(null);
     }
 }

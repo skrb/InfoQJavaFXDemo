@@ -6,7 +6,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextBox;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  */
 public class SceneGraphDemo extends Application {
     private WebEngine webEngine;
-    private TextBox urlBox;
+    private TextField urlField;
 
     @Override
     public void start(Stage stage) {
@@ -42,8 +42,8 @@ public class SceneGraphDemo extends Application {
         root.getChildren().add(borderPane);
 
         // ブラウザ
-        WebEngine engine = new WebEngine();
-        WebView view = new WebView(engine);
+        WebView view = new WebView();
+        WebEngine engine = view.getEngine();
         borderPane.setCenter(view);
 
         // 水平ボックス
@@ -55,8 +55,9 @@ public class SceneGraphDemo extends Application {
         hbox.getChildren().add(label);
 
         // テキスト入力
-        TextBox textBox = new TextBox(40);
-        hbox.getChildren().add(textBox);
+        TextField textField = new TextField();
+        textField.setPrefColumnCount(40);
+        hbox.getChildren().add(textField);
 
         // ボタン
         Button button = new Button("Open");
@@ -77,14 +78,14 @@ public class SceneGraphDemo extends Application {
         hbox.setPrefHeight(40);
         hbox.setAlignment(Pos.BASELINE_CENTER);
 
-        label.setFont(new Font("sanserif", 16));
-        textBox.setFont(new Font("sanserif", 16));
-        urlBox = textBox;
-        button.setFont(new Font("sanserif", 16));
+        label.setStyle("-fx-font-family: 'sans-serif'; -fx-font-size: 16;");
+        textField.setStyle("-fx-font-family: 'sans-serif'; -fx-font-size: 16;");
+        urlField = textField;
+        button.setStyle("-fx-font-family: 'sans-serif'; -fx-font-size: 16;");
 
         button.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                String url = urlBox.getText();
+                String url = urlField.getText();
                 if (url != null && !url.trim().isEmpty()) {
                     webEngine.load(url);
                 }
@@ -92,10 +93,10 @@ public class SceneGraphDemo extends Application {
         });
 
         // 表示
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(SceneGraphDemo.class, null);
+        Application.launch(null);
     }
 }

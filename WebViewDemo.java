@@ -1,13 +1,13 @@
 import javafx.application.Application;
-import javafx.async.Task;
-import javafx.async.TaskEvent;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextBox;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.Reflection;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  */
 public class WebViewDemo extends Application {
     private WebEngine engine;
-    private TextBox urlBox;
+    private TextField urlField;
 
     @Override
     public void start(Stage stage) {
@@ -36,8 +36,8 @@ public class WebViewDemo extends Application {
         stage.setScene(scene);
 
         // ブラウザ
-        engine = new WebEngine();
-        WebView view = new WebView(engine);
+        WebView view = new WebView();
+        engine = view.getEngine();
         view.setPrefSize(600,500);
         borderPane.setCenter(view);
         
@@ -45,15 +45,23 @@ public class WebViewDemo extends Application {
         Reflection reflection = new Reflection();
         reflection.setFraction(0.5);
         view.setEffect(reflection);
+        
+        // Webページのロードのタスク
+        Worker worker = engine.getLoadWorker();
 
         // ページのロードが終了した時の処理
-        Task<Void> task = engine.getLoadTask();
-        task.setOnDone(new EventHandler<TaskEvent>() {
-            public void handle(TaskEvent event) {
-                String url = engine.getLocation();
-                urlBox.setText(url);
+        worker.stateProperty().addListener(new ChangeListener<Worker.State>() {
+            @Override
+            public void changed(ObservableValue<? extends Worker.State> state,
+                    Worker.State oldValue, Worker.State newValue) {
+                if (newValue == Worker.State.SUCCEEDED) {
+                    String url = engine.getLocation();
+                    if (url != null && !url.isEmpty()) {
+                        urlField.setText(url);
+                    }
+                }
             }
-        });
+        });        
 
         // 水平ボックス
         HBox hbox = new HBox(10);
@@ -61,40 +69,39 @@ public class WebViewDemo extends Application {
         hbox.setAlignment(Pos.BASELINE_CENTER);
         borderPane.setTop(hbox);
 
-        // テキスト入力
-        urlBox = new TextBox(40);
-        urlBox.setFont(new Font("sanserif", 16));
-        hbox.getChildren().add(urlBox);
-
-        urlBox.setAction(new Runnable() {
-            public void run() {
+        // イベントハンドラー
+        EventHandler<ActionEvent> handler = new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent t) {
                 loadUrl();
             }
-        });
+        };
+
+        // テキスト入力
+        urlField = new TextField();
+        urlField.setPrefColumnCount(40);
+        urlField.setStyle("-fx-font-family: 'sans-serif'; -fx-font-size: 16;");
+        hbox.getChildren().add(urlField);
+        urlField.setOnAction(handler);
 
         // ボタン
         Button button = new Button("Open");
         button.setFont(new Font("sanserif", 16));
         hbox.getChildren().add(button);
+        button.setOnAction(handler);
 
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-                loadUrl();
-            }
-        });
-
-        stage.setVisible(true);
+        stage.show();
     }
 
     // ページのロード
     private void loadUrl() {
-        String url = urlBox.getText();
+        String url = urlField.getText();
         if (url != null && !url.trim().isEmpty()) {
             engine.load(url);
         }
     }
 
     public static void main(String[] args) {
-        Application.launch(WebViewDemo.class, null);
+        Application.launch(null);
     }
 }

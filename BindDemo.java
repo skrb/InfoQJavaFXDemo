@@ -32,10 +32,10 @@ public class BindDemo extends Application {
         rect.xProperty().bind(slider.valueProperty());
 
         stage.setScene(scene);
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(BindDemo.class, null);
+        Application.launch(null);
     }
 }

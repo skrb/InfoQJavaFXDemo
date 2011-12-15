@@ -4,7 +4,6 @@ import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.effect.BoxBlur;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -49,10 +48,10 @@ public class FadeTransitionDemo extends Application {
         }
 
         stage.setScene(scene);
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(FadeTransitionDemo.class, null);
+        Application.launch(null);
     }
 }

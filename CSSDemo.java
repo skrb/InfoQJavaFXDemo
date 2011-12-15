@@ -33,10 +33,10 @@ public class CSSDemo extends Application {
         container.getChildren().add(button3);
 
         stage.setScene(scene);
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(CSSDemo.class, null);
+        Application.launch(null);
     }
 }

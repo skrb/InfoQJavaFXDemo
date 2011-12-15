@@ -12,11 +12,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextBox;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
-import javafx.scene.effect.GaussianBlur;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -49,9 +47,9 @@ public class UIControlsDemo extends Application {
         RadioButton radioButton = new RadioButton("RadioButton");
         hbox.getChildren().add(radioButton);
         
-        // テキストボックス
-        TextBox textBox = new TextBox("TextBox");
-        hbox.getChildren().add(textBox);
+        // テキストフィールド
+        TextField textField = new TextField("TextField");
+        hbox.getChildren().add(textField);
         
         // ボタン
         Button button = new Button("Button");
@@ -129,10 +127,10 @@ public class UIControlsDemo extends Application {
         
         vbox.getChildren().add(chart);
 
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(UIControlsDemo.class, null);
+        Application.launch(null);
     }
 }

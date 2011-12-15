@@ -22,10 +22,10 @@ public class Hello extends Application {
         container.getChildren().add(label);
 
         // 表示
-        stage.setVisible(true);
+        stage.show();
     }
 
     public static void main(String[] args) {
-        Application.launch(Hello.class, null);
+        Application.launch(null);
     }
 }

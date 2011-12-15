@@ -1,0 +1,18 @@
+.button {
+    -fx-font: 14pt "SansSerif";
+    -fx-text-fill: #00FF33;
+    -fx-background-color: #0066FF;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 20;
+}
+
+#button3 {
+    -fx-font: 14pt "Monospaced";
+    -fx-text-fill: #FFCC00;
+    -fx-background-color: #003366;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(one-pass-box, gray, 2, 2, 4, 4);
+}
